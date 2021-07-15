@@ -21,5 +21,4 @@ int main (int argc, char **argv, char **envp)
 }
 вот и из этой программы мы получим все, что хранится в envp
 ![image](https://user-images.githubusercontent.com/83909594/125801209-c3c677c8-ddd6-483c-aa4a-95b8ccbcafa7.png)
-![image](https://user-images.githubusercontent.com/83909594/125801253-fdf01a82-c6ed-42a3-ad96-f1ea38d105a3.png)
 
