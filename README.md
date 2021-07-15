@@ -11,12 +11,12 @@
 int main (int argc, char **argv, char **envp)
 {
 	int i = 0;
-  char * home, * host;
+ 	 char * home, * host;
 
 	while (envp[i] != NULL)
-	  printf("%s\n", envp[i++]);
-  home = getenv("HOME");
-	host = getenv("LOGNAME");
+		printf("%s\n", envp[i++]);
+ 	home = getenv("HOME");
+ 	host = getenv("LOGNAME");
 	printf("\nВаш домашний каталог %s на %s. \n", home, host);
 }
 вот и из этой программы мы получим все, что хранится в envp
