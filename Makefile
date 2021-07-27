@@ -86,21 +86,21 @@ main_tests: $(TESTS)
 BONUS_TESTS = bonus_test1 bonus_test2 bonus_test3 bonus_test5 bonus_test6
 
 bonus_test1: bonus
-	@./$(NAME) infile "grep a1" "wc -c" "wc -l" outfile
+	@./pipex infile "grep a1" "wc -c" "wc -l" outfile
 	@< infile grep a1 | wc -c | wc -l
 	@echo "$(GREEN) bonus_test1 - [ok] $(RESET)"
 
 bonus_test2: bonus
-	@./$(NAME) here_doc a cat "wc -c" outfile
+	@./pipex here_doc a cat "wc -c" outfile
 	@cat << a | wc -c
 	@echo "$(GREEN) bonus_test2 - [ok] $(RESET)"
 
 bonus_test3: bonus
-	@./$(NAME) here_doc a cat "wc -c" "head -n 1" outfile
+	@./pipex here_doc a cat "wc -c" "head -n 1" outfile
 	@echo "$(GREEN) bonus_test3 - [ok] $(RESET)"
 
 bonus_test4: bonus
-	@./$(NAME) here_doc a cat "wc -c" "head -n 1" outfile1
+	@./pipex here_doc a cat "wc -c" "head -n 1" outfile1
 	@cat << a | wc -c | head -n 1
 	@echo "$(GREEN) bonus_test4 - [ok] $(RESET)"
 

@@ -22,8 +22,8 @@ void	dup_close(t_p *d, int fd1, int fd2, int j)
 {
 	dup2(fd1, 0);
 	dup2(fd2, 1);
-	while (j >= 0)
-		close(d->fd_bonus[j--]);
+	while (j > 0)
+		close(d->fd_bonus[--j]);
 }
 
 int	check_argc(int argc, char *argv)
@@ -45,6 +45,7 @@ void	here_doc(t_p *d, char *stop)
 {
 	char	*line;
 
+	d->doc = 4;
 	d->in_out[0] = open("del.txt", O_RDWR | O_CREAT | O_TRUNC, 0666);
 	while (get_next_line(0, &line) > 0
 		&&ft_strncmp(line, stop, ft_strlen(stop) + 1) != 0)
@@ -53,7 +54,6 @@ void	here_doc(t_p *d, char *stop)
 		write(d->in_out[0], "\n", 1);
 	}
 	free(line);
-	d->doc = 4;
 	close(d->in_out[0]);
 	d->in_out[0] = open("del.txt", O_RDONLY);
 }
